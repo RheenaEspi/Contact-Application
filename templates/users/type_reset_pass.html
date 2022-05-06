@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="{% url 'savereset_pass' %}" method="POST">{% csrf_token %}
+
+
+    <input type="hidden" name="reset_user" id="Id_reset_user" value="{{reset_user}}">
+
+
+
+<fieldset class="form-group">
+                <legend class="border-bottom mb-4">Type new password</legend>
+
+
+            <div id="div_id_username" class="form-group">
+                <label for="id_username" class=" requiredField">
+                            password<span class="asteriskField">*</span>
+                </label>
+                <div class="">
+                    <input type="password" name="password"  onkeyup="check_otp()" maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_password">
+                </div>
+            </div>
+            <div id="div_id_username2" class="form-group">
+                <label for="id_username2" class=" requiredField">
+                            confirm password<span class="asteriskField">*</span>
+                </label>
+                <div class="">
+                    <input type="password" name="confirm_password" onkeyup="check_otp()" maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_confirm_password">
+                </div>
+            </div>
+
+            </fieldset>
+            <div class="form-group" id="btn_type">
+                <button class="btn btn-outline-info" type="submit" disabled>Reset Password</button>
+            </div>
+
+</form>
+
+
+<script>
+    function check_otp(){
+    var x = document.getElementById('id_password').value
+    var y = document.getElementById('id_confirm_password').value
+
+    if (x == y){
+
+    document.getElementById('btn_type').innerHTML = `<button class="btn btn-outline-info" type="submit">Reset Password</button>`
+    }
+    else{
+    document.getElementById('btn_type').innerHTML = `<button class="btn btn-outline-info" type="submit" disabled>Reset Password</button>`
+    }
+
+
+    }
+
+
+
+</script>
+
+{% endblock %}

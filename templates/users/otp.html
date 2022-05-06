@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="{% url 'save_the_user_info' %}" method="POSt">{% csrf_token %}
+
+    <input type="hidden" name="username_2" value="{{username}}">
+    <input type="hidden" name="email_2" value="{{email}}">
+    <input type="hidden" name="password1_2" value="{{password1}}">
+    <input type="hidden"  id="Id_generated_otp" name="generated_otp_num_str_2" value="{{generated_otp_num_str}}">
+
+
+<fieldset class="form-group">
+                <legend class="border-bottom mb-4">We send a otp in your email please Type this below</legend>
+
+
+<div id="div_id_username" class="form-group"> <label for="id_username" class=" requiredField">
+                OTP<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="otp" onkeyup="check_otp()" maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_new_otp">  </div> </div>
+            </fieldset>
+            <div class="form-group" id="btn_type">
+                <button class="btn btn-outline-info" type="submit" disabled>Sign Up</button>
+            </div>
+
+</form>
+
+
+<script>
+    function check_otp(){
+    var x = document.getElementById('id_new_otp').value
+    var y = document.getElementById('Id_generated_otp').value
+
+    if (x == y){
+
+    document.getElementById('btn_type').innerHTML = `<button class="btn btn-outline-info" type="submit">Sign Up</button>`
+    }
+    else{
+    document.getElementById('btn_type').innerHTML = `<button class="btn btn-outline-info" type="submit" disabled>Sign Up</button>`
+    }
+
+
+    }
+
+
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<ul class="list-group mb-5">
+<h1 class="mb-5 text-center">President Result</h1>
+	<li class="list-group-item">
+		President 1  <span class="badge badge-success float-right">{{one}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 2  <span class="badge badge-success float-right">{{two}} vote</span>
+	</li>
+
+	<li class="list-group-item">
+		President 3  <span class="badge badge-success float-right">{{three}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 4  <span class="badge badge-success float-right">{{four}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 5  <span class="badge badge-success float-right">{{five}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 6  <span class="badge badge-success float-right">{{six}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 7  <span class="badge badge-success float-right">{{seven}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 8  <span class="badge badge-success float-right">{{eight}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 9  <span class="badge badge-success float-right">{{nine}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 10  <span class="badge badge-success float-right">{{ten}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 11  <span class="badge badge-success float-right">{{el_11}} votes</span>
+	</li>
+
+	<li class="list-group-item">
+		President 12  <span class="badge badge-success float-right">{{t_12}} votes</span>
+	</li>
+
+</ul>
+
+
+
+<input type="hidden" id="id_one" value="{{one}}">
+<input type="hidden" id="id_two" value="{{two}}">
+<input type="hidden" id="id_three" value="{{three}}">
+<input type="text" id="id_four" value="{{four}}">
+<input type="hidden" id="id_five" value="{{five}}">
+<input type="hidden" id="id_six" value="{{six}}">
+<input type="hidden" id="id_seven" value="{{seven}}">
+<input type="hidden" id="id_eight" value="{{eight}}">
+<input type="hidden" id="id_nine" value="{{nine}}">
+<input type="hidden" id="id_ten" value="{{ten}}">
+<input type="hidden" id="id_el_11" value="{{el_11}}">
+<input type="hidden" id="id_t_12" value="{{t_12}}">
+
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+
+var o_1=document.getElementById('id_one').value
+var o_2=document.getElementById('id_two').value
+var o_3=document.getElementById('id_three').value
+var o_4=document.getElementById('id_four').value
+var o_5=document.getElementById('id_five').value
+var o_6=document.getElementById('id_six').value
+var o_7=document.getElementById('id_seven').value
+var o_8=document.getElementById('id_eight').value
+var o_9=document.getElementById('id_nine').value
+var o_10=document.getElementById('id_ten').value
+var o_11=document.getElementById('id_el_11').value
+var o_12=document.getElementById('id_t_12').value
+
+
+var xArray = ["President 1", "President 2", "President 3", "President 4", "President 5", "President 6", "President 7", "President 8", "President 9", "President 10"];
+var yArray = [o_1, o_2, o_3, o_4, o_5, o_6, o_7, o_8, o_9, o_10, o_11, o_12];
+
+var data = [{
+  x:xArray,
+  y:yArray,
+  type:"bar"
+}];
+
+var layout = {title:"World Wide Wine Production"};
+
+Plotly.newPlot("myPlot", data, layout);
+</script>
+
+{% endblock %}

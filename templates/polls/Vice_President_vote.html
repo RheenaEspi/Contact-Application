@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto">
+
+
+
+<script>
+    setTimeout(function(){
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 2000)
+</script>
+
+
+<a class="btn btn-secondary btn-sm mb-3" href="/polls/">Back To Polls</a>
+<h1 class="text-center mb-3">Vice President</h1>
+
+
+
+<form action="{% url 'save_the_v_p_v' %}" method="POST">
+	{% csrf_token %}
+	<input type="hidden" name="csrfmiddlewaretoken" value="PpPMvVHuSLiB4eVkcZGUdLUhWbow6dic9o5Rmnq3vKdBMZSAYEszSfWj55EEiEG6">
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice1" value="1">
+			<label for="choice1">Vice President 1</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice2" value="2">
+			<label for="choice2">Vice President 2</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice3" value="3">
+			<label for="choice3">Vice President 3</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice4" value="4">
+			<label for="choice4">Vice President 4</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice5" value="5">
+			<label for="choice5">Vice President 5</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice6" value="6">
+			<label for="choice6">Vice President 6</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice7" value="7">
+			<label for="choice7">Vice President 7</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice8" value="8">
+			<label for="choice8">Vice President 8</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice9" value="9">
+			<label for="choice9">Vice President 9</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice10" value="10">
+			<label for="choice10">Vice President 10</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice11" value="11">
+			<label for="choice11">Vice President 11</label>
+		</div>
+
+		<div class="form-check">
+			<input type="radio" name="choice" class="form-check-input" id="choice12" value="12">
+			<label for="choice12">Vice President 12</label>
+		</div>
+
+	<input type="submit" value="Vote" class="btn btn-success btn-lg btn-block mt-4">
+</form>
+
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

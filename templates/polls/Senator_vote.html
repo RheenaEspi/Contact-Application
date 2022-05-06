@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto">
+
+
+
+<script>
+    setTimeout(function(){
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 2000)
+</script>
+
+
+<a class="btn btn-secondary btn-sm mb-3" href="/polls/">Back To Polls</a>
+<h1 class="text-center mb-3">Sanator</h1>
+
+
+
+<form action="{% url 'save_the_sanetor_v' %}" method="POST">{% csrf_token %}
+	<input type="hidden" name="csrfmiddlewaretoken" value="PpPMvVHuSLiB4eVkcZGUdLUhWbow6dic9o5Rmnq3vKdBMZSAYEszSfWj55EEiEG6">
+
+
+
+
+	<div class="pricing-levels-3">
+          <p><strong>Sanator list</strong></p>
+          <input class="single-checkbox"type="checkbox" name="Sanator_1" value="Sanator_1" style="margin-right: 8px;">Sanator 1<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_2" value="Sanator_2" style="margin-right: 8px;">Sanator 2<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_3" value="Sanator_3" style="margin-right: 8px;">Sanator 3<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_4" value="Sanator_4" style="margin-right: 8px;">Sanator 4<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_5" value="Sanator_5" style="margin-right: 8px;">Sanator 5<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_6" value="Sanator_6" style="margin-right: 8px;">Sanator 6<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_7" value="Sanator_7" style="margin-right: 8px;">Sanator 7<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_8" value="Sanator_8" style="margin-right: 8px;">Sanator 8<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_9" value="Sanator_9" style="margin-right: 8px;">Sanator 9<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_10" value="Sanator_10" style="margin-right: 8px;">Sanator 10<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_11" value="Sanator_11" style="margin-right: 8px;">Sanator 11<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_12" value="Sanator_12" style="margin-right: 8px;">Sanator 12<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_13" value="Sanator_13" style="margin-right: 8px;">Sanator 13<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_14" value="Sanator_14" style="margin-right: 8px;">Sanator 14<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_15" value="Sanator_15" style="margin-right: 8px;">Sanator 15<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_16" value="Sanator_16" style="margin-right: 8px;">Sanator 16<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_17" value="Sanator_17" style="margin-right: 8px;">Sanator 17<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_18" value="Sanator_18" style="margin-right: 8px;">Sanator 18<br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_19" value="Sanator_19" style="margin-right: 8px;">Sanator 19 <br>
+          <input class="single-checkbox"type="checkbox" name="Sanator_20" value="Sanator_20" style="margin-right: 8px;">Sanator 20<br>
+
+        </div>
+
+
+
+	<input type="submit" value="Vote" class="btn btn-success btn-lg btn-block mt-4">
+</form>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+<script>
+	var limit = 12;
+$('input.single-checkbox').on('change', function(evt) {
+   if($(this).siblings(':checked').length >= limit) {
+       this.checked = false;
+   }
+});
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="content-section">
+
+        <form action="{% url 'check_the_otp' %}" method="POST">
+
+            {% csrf_token %}
+
+            <input type="hidden" name="csrfmiddlewaretoken" value="mGlWSaEgmR4Jrkd74P6BDeU3ygaYQ5BJd3odCqn3t19zD3sIt40reVX3XE5OUwgg">
+
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register</legend>
+
+
+
+<div id="div_id_username" class="form-group"> <label for="id_username" class=" requiredField">
+                Username<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_username">  </div> </div> <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
+                Email<span class="asteriskField">*</span> </label> <div class=""> <input type="email" name="email" class="emailinput form-control" required="" id="id_email"> </div> </div> <div id="div_id_password1" class="form-group"> <label for="id_password1" class=" requiredField">
+                Password<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="" id="id_password1" onkeyup="check_pass()" onclick="check_pass()">  </div> </div> <div id="div_id_password2" class="form-group"> <label for="id_password2" class=" requiredField">
+                Password confirmation<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password2" autocomplete="new-password" class="textinput textInput form-control" required="" id="id_password2" onkeyup="check_pass()" onclick="check_pass()"> </div> </div>
+
+
+            </fieldset>
+            <div class="form-group" id="btn_type">
+                <button class="btn btn-outline-info" type="submit" disabled>Sign Up</button>
+            </div>
+        </form>
+
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="/login/">Sign In</a>
+            </small>
+            <hr>
+        </div>
+
+    </div>
+
+
+
+<script>
+
+
+    function check_pass(){
+    var x = document.getElementById('id_password1').value
+    var y = document.getElementById('id_password2').value
+
+    if (x == y){
+
+    document.getElementById('btn_type').innerHTML = `<button class="btn btn-outline-info" type="submit">Sign Up</button>`
+    }
+    else{
+    document.getElementById('btn_type').innerHTML = `<button class="btn btn-outline-info" type="submit" disabled>Sign Up</button>`
+    }
+
+
+    }
+
+</script>
+
+{% endblock %}

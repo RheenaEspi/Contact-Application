@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="{% url 'reset_pass' %}" method="POST">{% csrf_token %}
+
+
+
+<fieldset class="form-group">
+                <legend class="border-bottom mb-4">We will send a otp in your email please Type yuor username</legend>
+
+
+<div id="div_id_username" class="form-group"> <label for="id_username" class=" requiredField">
+                Username<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="reset_user"  maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_new_otp">  </div> </div>
+            </fieldset>
+            <div class="form-group" id="btn_type">
+                <button class="btn btn-outline-info" type="submit">Send OTP to My Email</button>
+            </div>
+
+</form>
+
+
+{% endblock %}
